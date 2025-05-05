@@ -56,9 +56,8 @@ export class PyramidValidator {
         const yValues = points.map(p => p.y);
     
         const width = Math.max(...xValues) - Math.min(...xValues);
-        let minX = Math.min(...xValues);
-        const height = Math.max(...yValues) - Math.min(...yValues);
-        let minY = Math.min(...yValues);
+        const minX = Math.min(...xValues);
+        const minY = Math.min(...yValues);
         if (width / 2 + minX !== center.x || length / 2 + minY !== center.y) {
             throw new ValidationError(raw, `Центр невалидный`);
         }

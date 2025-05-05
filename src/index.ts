@@ -9,9 +9,8 @@ import { logger } from './logger.js'
 
 const figures = readFromFile('input/input.txt')
 try {
-    for (let figure of figures ) {
+    for (const figure of figures ) {
         if (figure instanceof Rectangle) {
-            console.log(figure.id)
             const existing = RectangleService.rectangleExists(figure)
             const isRectangle = RectangleService.rectangleExists(figure)
             const square = RectangleService.calculateArea(figure)
@@ -21,7 +20,6 @@ try {
             console.log(existing, isRectangle, square, perim, isSq, isRh)
         } else {
             if (figure instanceof Pyramid) {
-                console.log(figure.id)
                 const isPyramid = PyramidService.isValidPyramidShape(figure)
                 const PSquare = PyramidService.calculateArea(figure)
                 const PVolume = PyramidService.calculateVolume(figure)

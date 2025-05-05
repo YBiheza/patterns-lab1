@@ -4,12 +4,11 @@ import { Rectangle } from "../entities/rectangle.js";
 
 export class createObject {
     static createRectangle (id: string, 
-        point1: Point, //[number, number, number],, 
-        point2: Point, //[number, number, number],, 
-        point3: Point, //[number, number, number],, 
-        point4: Point, //[number, number, number],
+        point1: Point, 
+        point2: Point, 
+        point3: Point, 
+        point4: Point,
     ): Rectangle {
-        //const toPoint = ([x, y, z]: [number, number, number]) => new Point(x, y, z);
         
         return new Rectangle(id, [point1, point2, point3, point4])
     }
@@ -18,10 +17,10 @@ export class createObject {
         id: string, 
         apex: Point, 
         center: Point, 
-        point1: Point, //[number, number, number], 
-        point2: Point, //[number, number, number], 
-        point3: Point, //[number, number, number], 
-        point4: Point, //[number, number, number]
+        point1: Point, 
+        point2: Point,
+        point3: Point,
+        point4: Point,
     ): Pyramid {
         //const toPoint = ([x, y, z]: Point) => new Point(x, y, z);
 

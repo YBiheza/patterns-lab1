@@ -4,25 +4,21 @@ import { logger } from "../logger.js";
 
 export class RectangleService {
     static calculateArea(rectangle: Rectangle): number {
-        let width: number;
-        let length: number;
         const xValues = rectangle.vertices.map(v => v.x);
         const yValues = rectangle.vertices.map(v => v.y);
       
-        width = Math.max(...xValues) - Math.min(...xValues);
-        length = Math.max(...yValues) - Math.min(...yValues);
+        const width: number = Math.max(...xValues) - Math.min(...xValues);
+        const length: number = Math.max(...yValues) - Math.min(...yValues);
       
         return width * length;
     }
 
     static calculatePerimetr(rectangle: Rectangle): number {
-        let width: number;
-        let length: number;
         const xValues = rectangle.vertices.map(v => v.x);
         const yValues = rectangle.vertices.map(v => v.y);
       
-        width = Math.max(...xValues) - Math.min(...xValues);
-        length = Math.max(...yValues) - Math.min(...yValues);
+        const width: number = Math.max(...xValues) - Math.min(...xValues);
+        const length: number = Math.max(...yValues) - Math.min(...yValues);
         
         return ( width + length ) * 2
     }
@@ -69,14 +65,14 @@ export class RectangleService {
         const xCount: { [key: number]: number } = {};
         const yCount: { [key: number]: number } = {};
 
-        for (let num of xValues) {
+        for (const num of xValues) {
             xCount[num] = (xCount[num] || 0) + 1;
             if (xCount[num] > 2) {
                 return false; 
             }
         }
 
-        for (let num of yValues) {
+        for (const num of yValues) {
             yCount[num] = (yCount[num] || 0) + 1;
             if (yCount[num] > 2) {
                 return false; 
@@ -87,13 +83,11 @@ export class RectangleService {
     }
 
     static isSquare (rectangle: Rectangle): boolean {
-        let width: number;
-        let length: number;
         const xValues = rectangle.vertices.map(v => v.x);
         const yValues = rectangle.vertices.map(v => v.y);
       
-        width = Math.max(...xValues) - Math.min(...xValues);
-        length = Math.max(...yValues) - Math.min(...yValues);
+        const width: number = Math.max(...xValues) - Math.min(...xValues);
+        const length: number = Math.max(...yValues) - Math.min(...yValues);
 
         if (width == length) {
             return true
